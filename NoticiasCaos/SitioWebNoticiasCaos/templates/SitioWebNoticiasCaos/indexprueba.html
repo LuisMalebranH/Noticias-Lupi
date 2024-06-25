@@ -1,0 +1,20 @@
+{% extends 'SitioWebNoticiasCaos/base_template.html' %}
+{%block title %}{{Articulo.etiquetaTitulo}}{% endblock %}
+
+{% block content %}
+
+<h1> Articulos</h1>
+
+<ul>
+{% for Articulo in object_list %}
+
+    <li><a href="{% url 'pagina_noticia' Articulo.pk %}"> {{ Articulo.tituloArticulo }}</a> 
+        - {{ Articulo.usuarioAutor }} <br/>
+         {{ Articulo.sinopsisArticulo}}
+    </li>
+
+{% endfor %}
+
+</ul>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{% extends 'SitioWebNoticiasCaos/base_template.html' %}
+
+{%block title %} {{object.etiquetaTitulo}} {% endblock %}
+
+{% block content %}
+   
+
+<body>
+    <h1>{{ object.tituloArticulo }}</h1>
+    <small>Por {{ object.usuarioAutor }}</small><br/>
+    <hr>
+    <br/>
+    <div>{{object.contenidoArticulo|safe}}</div>
+</body>
+
+<a href="{% url 'indexprueba' %}" class="btn btn-secondary"> Volver</a>
+
+
+
+
+
+{% endblock %}

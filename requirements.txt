@@ -1,0 +1,5 @@
+Django==5.0.6
+Pillow==10.3.0
+django_bootstrap5
+django-forms-bootstrap
+django-ckeditor
