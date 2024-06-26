@@ -1,0 +1,22 @@
+{% extends 'SitioWebNoticiasCaos/base_template.html' %}
+
+{% block title %} Editar {% endblock %}
+
+{% block content %}
+
+<h1> Editar Artículo</h1>
+<br/> <br/>
+
+<div class="form-group">
+    <form method = "POST">
+        {% csrf_token %}
+        {{ form.media}}
+        {{ form.as_p }}
+        <button class="btn btn-secondary"> Guardar Cambios</button>
+    </form>
+
+
+
+</div>
+
+{% endblock %}

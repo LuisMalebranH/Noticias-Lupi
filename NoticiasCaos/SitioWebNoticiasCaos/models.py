@@ -33,6 +33,19 @@ class Autor (models.Model):
     def __str__(self):
         return self.usuarioAutor
 
+class Editor (models.Model):
+    usuarioEditor = models.OneToOneField(User, on_delete=models.CASCADE)
+    priNomEditor = models.CharField(max_length=15)
+    segNomEditor = models.CharField(max_length=15) 
+    apPaternoEditor = models.CharField(max_length=15) 
+    apMaternoEditor = models.CharField(max_length=15) 
+    # id_genero = ????
+    fonoEditor = models.CharField(max_length=11)
+    correoElectronico = models.CharField(max_length=40, default="example@email.com")
+
+    def __str__(self):
+        return self.usuarioEditor
+
 class Articulo (models.Model):
     
     tituloArticulo = models.CharField(max_length=255)
@@ -40,9 +53,10 @@ class Articulo (models.Model):
     contenidoArticulo = RichTextField(blank=True, null=True)
     #contenidoArticulo = models.TextField()
     sinopsisArticulo = models.CharField(max_length=255)
-    imagenArticulo = models.ImageField(upload_to = "SitioWebNoticiasCaos/img/", blank=True, null=True)
+    imagenArticulo = models.ImageField(upload_to = "img/", blank=True, null=True)
     fechaPublicacion =models.DateField(auto_now_add=True)
-    usuarioAutor = models.ForeignKey(User, on_delete=models.CASCADE)
+    usuarioAutor = models.ForeignKey(User, related_name='articulos_autor', on_delete=models.CASCADE)
+    usuarioEditor = models.ForeignKey(User, related_name='articulos_editor', on_delete=models.CASCADE, blank=True, null=True)
 
 
     def __str__(self):
