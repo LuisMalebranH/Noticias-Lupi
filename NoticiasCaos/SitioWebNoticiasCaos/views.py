@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Articulo
 from .forms import ArticuloForm 
 # Create your views here.
@@ -28,6 +29,11 @@ class EditarArticulo(UpdateView):
     model = Articulo
     template_name = 'SitioWebNoticiasCaos/editararticulo.html'
     fields = ["tituloArticulo", "etiquetaTitulo", "contenidoArticulo", "sinopsisArticulo", 'usuarioEditor', "imagenArticulo"]
+
+class BorrarArticulo(DeleteView):
+    model = Articulo 
+    template_name = 'SitioWebNoticiasCaos/borrararticulo.html'
+    success_url = reverse_lazy('indexprueba')
 
 
 def contacto(request):

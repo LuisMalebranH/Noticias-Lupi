@@ -8,7 +8,7 @@
 
 <body>
     <h1>{{ object.tituloArticulo }}</h1>
-    <small>Por {{ object.usuarioAutor }} -  <a href="{% url 'editararticulo' object.pk %}">(Editar)</a></small><br/>
+    <small>Por {{ object.usuarioAutor }} -  <a href="{% url 'editararticulo' object.pk %}">(Editar) - <a href="{% url 'borrarnoticia' object.pk %}">(Borrar) </a></small><br/>
     <hr>
     <br/>
     <div>{{object.contenidoArticulo|safe}}</div>
