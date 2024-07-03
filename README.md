@@ -1,5 +1,4 @@
-# Evaluación Parcial 1.2 - Desarrollando una maqueta de página Web
-
+# Noticias LUPI
 
 Moverse entre carpetas con cd Nombredecarpeta para ir a la carpeta
 
